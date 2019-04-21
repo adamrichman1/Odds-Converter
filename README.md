@@ -4,7 +4,7 @@
 
 ### Contributors
 * [Adam Richman](http://github.com/adamrichman1)
-* [Josh_Gulden](http://github.com/jdg78)
+* [Josh Gulden](http://github.com/jdg78)
 
 ### Build
 ```
