@@ -1,3 +1,5 @@
+package Core;
+
 import OddsEngines.OddsEngineFactory;
 
 import java.util.Scanner;
@@ -15,9 +17,9 @@ class IOController {
     private InputVerifier inputVerifier;
 
     /**
-     * Used to create an IOController - dependency injection
+     * Used to create an Core.IOController - dependency injection
      *
-     * @param inputVerifier the InputVerifier to use
+     * @param inputVerifier the Core.InputVerifier to use
      */
     IOController(InputVerifier inputVerifier) {
         this.inputVerifier = inputVerifier;

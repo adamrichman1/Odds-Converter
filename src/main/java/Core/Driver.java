@@ -1,3 +1,5 @@
+package Core;
+
 import OddsEngines.OddsEngineFactory;
 
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class Driver {
      * @param args command-line arguments
      */
     public static void main(String[] args) {
-        // Save IOController via static access modifier
+        // Save Core.IOController via static access modifier
         setIoController(new IOController(new InputVerifier()));
 
         // Run program
@@ -53,7 +55,7 @@ public class Driver {
     }
 
     /**
-     * Static access modifier for IOController
+     * Static access modifier for Core.IOController
      *
      * @param ioController the new IO Controller
      */
