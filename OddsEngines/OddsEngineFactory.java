@@ -11,6 +11,12 @@ import java.util.HashMap;
  * Final Project
  */
 public class OddsEngineFactory {
+
+    private static ImpliedProbabilityOddsEngine probabilityOddsEngine = ImpliedProbabilityOddsEngine.getInstance();
+    private static DecimalOddsEngine decimalOddsEngine = DecimalOddsEngine.getInstance();
+    private static FractionalOddsEngine fractionalOddsEngine = FractionalOddsEngine.getInstance();
+    private static AmericanOddsEngine americanOddsEngine = AmericanOddsEngine.getInstance();
+
     /**
      * Uses Factory design pattern to creates OddsEngine objects
      *
@@ -20,13 +26,13 @@ public class OddsEngineFactory {
     public static OddsEngine createOddsEngine(String selection) {
         switch(Integer.parseInt(selection)) {
             case(1):
-                return ImpliedProbabilityOddsEngine.getInstance();
+                return probabilityOddsEngine;
             case(2):
-                return DecimalOddsEngine.getInstance();
+                return decimalOddsEngine;
             case(3):
-                return FractionalOddsEngine.getInstance();
+                return fractionalOddsEngine;
             case(4):
-                return AmericanOddsEngine.getInstance();
+                return americanOddsEngine;
             default:
                 throw new IllegalArgumentException(">>> ERROR: Invalid odds selection provided by the user");
         }
@@ -39,13 +45,12 @@ public class OddsEngineFactory {
      * @return a HashMap mapping all supported odds formats to odds
      */
     public static HashMap<String, String> convertOdds(double probability) {
-        OddsEngine e;
         HashMap<String, String> converted = new HashMap<>();
-        converted.put((e = createOddsEngine("1")).getId(), e.convertToOdds(probability));
-        converted.put((e = createOddsEngine("2")).getId(), e.convertToOdds(probability));
-        converted.put((e = createOddsEngine("3")).getId(), e.convertToOdds(probability));
-        converted.put((e = createOddsEngine("4")).getId(), e.convertToOdds(probability));
-        converted.put("Vigorish", Double.toString(createOddsEngine("1").getVigorishInfo(probability)));
+        converted.put(probabilityOddsEngine.getId(), probabilityOddsEngine.convertToOdds(probability));
+        converted.put(decimalOddsEngine.getId(), decimalOddsEngine.convertToOdds(probability));
+        converted.put(fractionalOddsEngine.getId(), fractionalOddsEngine.convertToOdds(probability));
+        converted.put(americanOddsEngine.getId(), americanOddsEngine.convertToOdds(probability));
+        converted.put("Vigorish", Double.toString(probabilityOddsEngine.getVigorishInfo(probability)));
         return converted;
     }
 }
