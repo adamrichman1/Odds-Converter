@@ -8,7 +8,7 @@ package OddsEngines;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-public class FractionalOddsEngine implements OddsEngine {
+public class FractionalOddsEngine extends OddsEngine {
 
     private static FractionalOddsEngine oddsEngine;
 

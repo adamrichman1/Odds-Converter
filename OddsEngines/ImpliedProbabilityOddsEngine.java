@@ -1,6 +1,14 @@
 package OddsEngines;
 
-public class ImpliedProbabilityOddsEngine implements OddsEngine {
+/**
+ * Filename: ImpliedProbabilityOddsEngine.java
+ * Author: Adam Richman, Josh Gulden
+ * Purpose: This class is used to manage Implied Probability odds conversions
+ * Creation Date: 4/21/19
+ * Course Info: CS 1699 - SEC 1115
+ * Final Project
+ */
+public class ImpliedProbabilityOddsEngine extends OddsEngine {
 
     private static ImpliedProbabilityOddsEngine oddsEngine;
 
@@ -47,7 +55,7 @@ public class ImpliedProbabilityOddsEngine implements OddsEngine {
     @Override
     public boolean oddsValid(String odds) {
         try {
-            return Double.parseDouble(odds) <= 1.0 && Double.parseDouble(odds) >= 0.0;
+            return Double.parseDouble(odds) >= 0.0;
         } catch(NumberFormatException e) {
             return false;
         }

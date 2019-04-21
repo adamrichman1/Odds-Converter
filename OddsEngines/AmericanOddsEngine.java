@@ -8,7 +8,7 @@ package OddsEngines;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-public class AmericanOddsEngine implements OddsEngine {
+public class AmericanOddsEngine extends OddsEngine {
 
     private static AmericanOddsEngine oddsEngine;
 
@@ -17,7 +17,7 @@ public class AmericanOddsEngine implements OddsEngine {
      *
      * @return the sole instance of AmericanOddsEngine
      */
-    public static AmericanOddsEngine getInstance() {
+    static AmericanOddsEngine getInstance() {
         if (oddsEngine == null) {
             oddsEngine = new AmericanOddsEngine();
         }

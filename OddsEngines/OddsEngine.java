@@ -8,14 +8,14 @@ package OddsEngines;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-public interface OddsEngine {
+public abstract class OddsEngine {
     /**
      * Converts odds into implied probability format
      *
      * @param odds the input odds
      * @return the odds in implied probability format
      */
-    double convertToImpliedProbability(String odds);
+    public abstract double convertToImpliedProbability(String odds);
 
     /**
      * Converts an implied probability into odds
@@ -23,7 +23,7 @@ public interface OddsEngine {
      * @param impliedProbability the probability to convert to american odds
      * @return the odds in the specific sub-class format
      */
-    String convertToOdds(double impliedProbability);
+    public abstract String convertToOdds(double impliedProbability);
 
     /**
      * Checks if the odds entered by a user are valid
@@ -31,12 +31,22 @@ public interface OddsEngine {
      * @param odds the odds entered by the user
      * @return true if the odds are valid, false otherwise
      */
-    boolean oddsValid(String odds);
+    public abstract boolean oddsValid(String odds);
 
     /**
      * Returns the ID for this OddsEngine
      *
      * @return the String ID for this OddsEngine
      */
-    String getId();
+    public abstract String getId();
+
+    /**
+     * Finds the vigorish applied to the odds
+     *
+     * @param probability the implied probability to get vigorish info from
+     * @return the vigorish applied to the odds
+     */
+    double getVigorishInfo(double probability) {
+        return (probability < 1.0) ? 0.0 : Math.round(100.0*(probability-1.0))/100.0;
+    }
 }

@@ -41,10 +41,11 @@ public class OddsEngineFactory {
     public static HashMap<String, String> convertOdds(double probability) {
         OddsEngine e;
         HashMap<String, String> converted = new HashMap<>();
-        converted.put("Implied Probability", Double.toString(probability));
+        converted.put((e = createOddsEngine("1")).getId(), e.convertToOdds(probability));
         converted.put((e = createOddsEngine("2")).getId(), e.convertToOdds(probability));
         converted.put((e = createOddsEngine("3")).getId(), e.convertToOdds(probability));
         converted.put((e = createOddsEngine("4")).getId(), e.convertToOdds(probability));
+        converted.put("Vigorish", Double.toString(createOddsEngine("1").getVigorishInfo(probability)));
         return converted;
     }
 }
