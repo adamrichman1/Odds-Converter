@@ -1,7 +1,7 @@
 package OddsEngines;
 
 /**
- * Filename: OddsEngine.java
+ * Filename: VigorishEngine.java
  * Author: Adam Richman, Josh Gulden
  * Purpose: This class is used to require sub-classes to implement a method to find the Vigorish of a probability
  * Creation Date: 4/21/19
