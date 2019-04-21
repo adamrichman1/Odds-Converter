@@ -8,7 +8,7 @@ package OddsEngines;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-public abstract class OddsEngine {
+public abstract class OddsEngine implements VigorishEngine {
     /**
      * Converts odds into implied probability format
      *
@@ -46,7 +46,7 @@ public abstract class OddsEngine {
      * @param probability the implied probability to get vigorish info from
      * @return the vigorish applied to the odds
      */
-    double getVigorishInfo(double probability) {
+    public double getVigorishInfo(double probability) {
         return (probability < 1.0) ? 0.0 : Math.round(100.0*(probability-1.0))/100.0;
     }
 }
