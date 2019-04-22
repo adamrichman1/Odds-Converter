@@ -36,4 +36,4 @@ java -jar target/FinalProject-1.0.jar
 * Interface (VigorishEngine.java)
 * Abstract Class (OddsEngine.java)
 * Static Access Modifier (Inside Driver.java)
-* JUnit Tests found in the src/main/test directory
+* JUnit Tests found in the src/test/java directory
