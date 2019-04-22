@@ -1,10 +1,11 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Filename: OddsEngineFactoryTests.java
@@ -14,13 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class OddsEngineFactoryTests {
+public class OddsEngineFactoryTests {
 
     /**
      * Tests createOddsEngine()
      */
     @Test
-    void testCreateOddsEngine() {
+    public void testCreateOddsEngine() {
         assertTrue(OddsEngineFactory.createOddsEngine("1") instanceof ImpliedProbabilityOddsEngine);
         assertTrue(OddsEngineFactory.createOddsEngine("2") instanceof DecimalOddsEngine);
         assertTrue(OddsEngineFactory.createOddsEngine("3") instanceof FractionalOddsEngine);
@@ -32,7 +33,7 @@ class OddsEngineFactoryTests {
      * Tests convertOdds()
      */
     @Test
-    void testConvertOdds() {
+    public void testConvertOdds() {
         HashMap<String, String> convertedOdds = OddsEngineFactory.convertOdds(.40);
         assertEquals(5, convertedOdds.size());
         assertTrue(convertedOdds.containsKey("Implied Probability"));

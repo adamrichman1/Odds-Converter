@@ -1,8 +1,8 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Filename: ImpliedProbabilityOddsEngineTests.java
@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class ImpliedProbabilityOddsEngineTests {
+public class ImpliedProbabilityOddsEngineTests {
     private ImpliedProbabilityOddsEngine oddsEngine = new ImpliedProbabilityOddsEngine();
 
     /**
      * Tests convertToImpliedProbability()
      */
     @Test
-    void testConvertToImpliedProbability() {
+    public void testConvertToImpliedProbability() {
         assertEquals(.20, oddsEngine.convertToImpliedProbability(".20"), 0);
         assertEquals(.60, oddsEngine.convertToImpliedProbability(".60"), 0);
         assertEquals(.75, oddsEngine.convertToImpliedProbability(".75"), 0);
@@ -30,7 +30,7 @@ class ImpliedProbabilityOddsEngineTests {
      * Tests convertToOdds()
      */
     @Test
-    void testConvertToOdds() {
+    public void testConvertToOdds() {
         assertEquals("0.2", oddsEngine.convertToOdds(.20));
         assertEquals("0.6", oddsEngine.convertToOdds(.60));
         assertEquals("0.75", oddsEngine.convertToOdds(.75));
@@ -41,7 +41,7 @@ class ImpliedProbabilityOddsEngineTests {
      * Tests oddsValid()
      */
     @Test
-    void testOddsValid() {
+    public void testOddsValid() {
         assertTrue(oddsEngine.oddsValid("3.0"));
         assertTrue(oddsEngine.oddsValid("0.45"));
         assertFalse(oddsEngine.oddsValid("hey"));
@@ -52,7 +52,7 @@ class ImpliedProbabilityOddsEngineTests {
      * Tests getId()
      */
     @Test
-    void testGetId() {
+    public void testGetId() {
         assertEquals("Implied Probability", oddsEngine.getId());
     }
 }

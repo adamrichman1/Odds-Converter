@@ -1,8 +1,8 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Filename: DecimalOddsEngineTests.java
@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class DecimalOddsEngineTests {
+public class DecimalOddsEngineTests {
     private DecimalOddsEngine oddsEngine = new DecimalOddsEngine();
 
     /**
      * Tests convertToImpliedProbability()
      */
     @Test
-    void testConvertToImpliedProbability() {
+    public void testConvertToImpliedProbability() {
         assertEquals(0.50, oddsEngine.convertToImpliedProbability("2.0"), 0);
         assertEquals(.25, oddsEngine.convertToImpliedProbability("4.0"), 0);
         assertEquals(.80, oddsEngine.convertToImpliedProbability("1.25"), 0);
@@ -30,7 +30,7 @@ class DecimalOddsEngineTests {
      * Tests convertToOdds()
      */
     @Test
-    void testConvertToOdds() {
+    public void testConvertToOdds() {
         assertEquals(2.0, Double.parseDouble(oddsEngine.convertToOdds(.50)), 0);
         assertEquals(1.33, Double.parseDouble(oddsEngine.convertToOdds(.75)), 0);
         assertEquals(33.33, Double.parseDouble(oddsEngine.convertToOdds(.03)), 0);
@@ -44,7 +44,7 @@ class DecimalOddsEngineTests {
      * Tests oddsValid()
      */
     @Test
-    void testOddsValid() {
+    public void testOddsValid() {
         assertTrue(oddsEngine.oddsValid("4.0"));
         assertTrue(oddsEngine.oddsValid("3.0"));
         assertFalse(oddsEngine.oddsValid(".99"));
@@ -55,7 +55,7 @@ class DecimalOddsEngineTests {
      * Tests getId()
      */
     @Test
-    void testGetId() {
+    public void testGetId() {
         assertEquals("Decimal", oddsEngine.getId());
     }
 }

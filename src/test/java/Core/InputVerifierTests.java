@@ -1,9 +1,9 @@
 package Core;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Filename: InputVerifierTests.java
@@ -13,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class InputVerifierTests {
+public class InputVerifierTests {
     private InputVerifier inputVerifier = new InputVerifier();
 
     /**
      * Tests that oddsFormatSelectionValid() works
      */
     @Test
-    void testOddsFormatSelectionValid() {
+    public void testOddsFormatSelectionValid() {
         assertTrue(inputVerifier.oddsFormatSelectionValid("1"));
         assertTrue(inputVerifier.oddsFormatSelectionValid("2"));
         assertTrue(inputVerifier.oddsFormatSelectionValid("3"));
@@ -32,7 +32,7 @@ class InputVerifierTests {
      * Tests that runAgainInputValid() works
      */
     @Test
-    void testRunAgainInputValid() {
+    public void testRunAgainInputValid() {
         assertTrue(inputVerifier.runAgainInputValid("yes"));
         assertTrue(inputVerifier.runAgainInputValid("no"));
         assertFalse(inputVerifier.runAgainInputValid("yer"));

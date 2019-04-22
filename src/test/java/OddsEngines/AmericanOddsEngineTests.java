@@ -1,8 +1,8 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Filename: AmericanOddsEngineTests.java
@@ -12,29 +12,29 @@ import static org.junit.jupiter.api.Assertions.*;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class AmericanOddsEngineTests {
+public class AmericanOddsEngineTests {
     private AmericanOddsEngine oddsEngine = new AmericanOddsEngine();
 
     /**
      * Tests convertToImpliedProbability()
      */
     @Test
-    void testConvertToImpliedProbability() {
-        assertEquals(0.50, oddsEngine.convertToImpliedProbability("-100"));
-        assertEquals(.75, oddsEngine.convertToImpliedProbability("-300"));
-        assertEquals(.25, oddsEngine.convertToImpliedProbability("+300"));
-        assertEquals(.99, oddsEngine.convertToImpliedProbability("-9900"));
-        assertEquals(.80, oddsEngine.convertToImpliedProbability("-400"));
-        assertEquals(.40, oddsEngine.convertToImpliedProbability("+150"));
-        assertEquals(.02, oddsEngine.convertToImpliedProbability("+4900"));
-        assertEquals(.01, oddsEngine.convertToImpliedProbability("+9900"));
+    public void testConvertToImpliedProbability() {
+        assertEquals(0.50, oddsEngine.convertToImpliedProbability("-100"), 0);
+        assertEquals(.75, oddsEngine.convertToImpliedProbability("-300"), 0);
+        assertEquals(.25, oddsEngine.convertToImpliedProbability("+300"), 0);
+        assertEquals(.99, oddsEngine.convertToImpliedProbability("-9900"), 0);
+        assertEquals(.80, oddsEngine.convertToImpliedProbability("-400"), 0);
+        assertEquals(.40, oddsEngine.convertToImpliedProbability("+150"), 0);
+        assertEquals(.02, oddsEngine.convertToImpliedProbability("+4900"), 0);
+        assertEquals(.01, oddsEngine.convertToImpliedProbability("+9900"), 0);
     }
 
     /**
      * Tests convertToOdds()
      */
     @Test
-    void testConvertToOdds() {
+    public void testConvertToOdds() {
         assertEquals("-100", oddsEngine.convertToOdds(.50));
         assertEquals("-300", oddsEngine.convertToOdds(.75));
         assertEquals("+3233", oddsEngine.convertToOdds(.03));
@@ -50,7 +50,7 @@ class AmericanOddsEngineTests {
      * Tests oddsValid()
      */
     @Test
-    void testOddsValid() {
+    public void testOddsValid() {
         assertTrue(oddsEngine.oddsValid("-300"));
         assertTrue(oddsEngine.oddsValid("+400"));
         assertFalse(oddsEngine.oddsValid("300"));
@@ -61,7 +61,7 @@ class AmericanOddsEngineTests {
      * Tests getId()
      */
     @Test
-    void testGetId() {
+    public void testGetId() {
         assertEquals("American", oddsEngine.getId());
     }
 }

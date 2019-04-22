@@ -1,8 +1,8 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Filename: FractionalOddsEngineTests.java
@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class FractionalOddsEngineTests {
+public class FractionalOddsEngineTests {
     private FractionalOddsEngine oddsEngine = new FractionalOddsEngine();
 
     /**
      * Tests convertToImpliedProbability()
      */
     @Test
-    void testConvertToImpliedProbability() {
+    public void testConvertToImpliedProbability() {
         assertEquals(.20, oddsEngine.convertToImpliedProbability("4/1"), 0);
         assertEquals(.60, oddsEngine.convertToImpliedProbability("2/3"), 0);
         assertEquals(.75, oddsEngine.convertToImpliedProbability("1/3"), 0);
@@ -30,7 +30,7 @@ class FractionalOddsEngineTests {
      * Tests convertToOdds()
      */
     @Test
-    void testConvertToOdds() {
+    public void testConvertToOdds() {
         assertEquals("4/1", oddsEngine.convertToOdds(.20));
         assertEquals("67/100", oddsEngine.convertToOdds(.60));
         assertEquals("33/100", oddsEngine.convertToOdds(.75));
@@ -41,7 +41,7 @@ class FractionalOddsEngineTests {
      * Tests oddsValid()
      */
     @Test
-    void testOddsValid() {
+    public void testOddsValid() {
         assertTrue(oddsEngine.oddsValid("5/3"));
         assertTrue(oddsEngine.oddsValid("20/30"));
         assertFalse(oddsEngine.oddsValid("5.0"));
@@ -53,7 +53,7 @@ class FractionalOddsEngineTests {
      * Tests getId()
      */
     @Test
-    void testGetId() {
+    public void testGetId() {
         assertEquals("Fractional", oddsEngine.getId());
     }
 }

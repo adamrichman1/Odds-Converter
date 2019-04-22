@@ -1,9 +1,11 @@
 package OddsEngines;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 /**
@@ -14,12 +16,12 @@ import static org.mockito.Mockito.when;
  * Course Info: CS 1699 - SEC 1115
  * Final Project
  */
-class OddsEngineTests {
+public class OddsEngineTests {
     /**
      * Tests getVigorishInfo()
      */
     @Test
-    void testGetVigorishInfo() {
+    public void testGetVigorishInfo() {
         OddsEngine m = Mockito.mock(OddsEngine.class);
         when(m.getVigorishInfo(1.05)).thenCallRealMethod();
         when(m.getVigorishInfo(1.00)).thenCallRealMethod();
