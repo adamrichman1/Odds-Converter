@@ -60,7 +60,7 @@ class IOController {
     String requestInputOddsFormat() {
         String selection;
         do {
-            System.out.println("\nEnter desired input odds format (either 1, 2, 3, or 4):\n1. Implied Probability\n2. Decimal\n3. Fractional\n4. American");
+            System.out.println("\nEnter desired input odds format (either 1, 2, 3, or 4):\n1. Implied Probability (ex: 0.45)\n2. Decimal (ex: 2.5)\n3. Fractional (ex: 5/1)\n4. American (ex: +300)");
         }
         while (!inputVerifier.oddsFormatSelectionValid(selection = readInput()));
         return selection;
